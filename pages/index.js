@@ -177,7 +177,7 @@ function getPointsPossible() {
 }
 
 /**
- * Find the average of individual student assignments and weighted assignments average
+ * Find the average of individual student assignments and weighted assignments
  * @param  {}
  * @param  {}
  * @return {Number}      The average of all assignments per student, individual assignment average
@@ -235,7 +235,7 @@ function getNames(name1, name2) {
 /**
  * Make a banner to display the assignments
  * @param  {Array}  LearnerSubmissions Array
- * @param  {}  
+ * @param  {}
  * @return {Number} Numbers, dates, strings
  */
 function displayAssignments(arr) {
@@ -339,5 +339,3 @@ function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) {
   }
 }
 console.log(getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmissions]));
-
-

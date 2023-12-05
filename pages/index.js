@@ -234,8 +234,8 @@ function getNames(name1, name2) {
 
 /**
  * Make a banner to display the assignments
- * @param  {Object} arr LearnerSubmissions Array
- * @param  {Object} obj AssignmentGroup Object
+ * @param  {Array}  LearnerSubmissions Array
+ * @param  {}  
  * @return {Number} Numbers, dates, strings
  */
 function displayAssignments(arr) {

@@ -236,7 +236,7 @@ function getNames(name1, name2) {
  * Make a banner to display the assignments
  * @param  {Array}  LearnerSubmissions Array
  * @param  {}
- * @return {Number} Numbers, dates, strings
+ * @return {String} output
  */
 function displayAssignments(arr) {
   let output = "";

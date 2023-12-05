@@ -114,7 +114,7 @@ function isCorrectCourse() {
 }
 
 /**
- * Pluck learner ID from an array
+ * Pluck learner IDs from LearnerSubmissions array
  * @param  {}
  * @param  {}
  * @return {Number}      Two student IDs
@@ -133,10 +133,10 @@ function getLearnerID() {
 getLearnerID();
 
 /**
- * Pluck student assignment scores from an array
+ * Pluck student assignment scores from LearnerSubmissions array
  * @param  {}
  * @param  {}
- * @return {Number}      Assignment Scores
+ * @return {Object}      Assignment Scores array
  */
 let learner1_scores = new Set();
 let learner2_scores = new Set();
@@ -180,7 +180,7 @@ function getPointsPossible() {
  * Find the average
  * @param  {}
  * @param  {}
- * @return {Number}      The average of numbers, individual student scores
+ * @return {Number}      The average of all assignments per student, individual assignment average
  */
 let learner1_1, learner1_2, learner2_1, learner2_2, points1, points2;
 function findAverage() {
@@ -214,8 +214,8 @@ function findAverage() {
 }
 
 /**
- * Pluck Course name, assignment name, course ID from an object
- * @param  {}
+ * Pluck Course name, assignment name, course ID from AssignmentGroup & CourseInfo
+ * @param  {Object} AssignmentGroup, CourseInfo
  * @param  {}
  * @return {}
  */
@@ -233,10 +233,10 @@ function getNames(name1, name2) {
 }
 
 /**
- * Make a banner for the assignments
+ * Make a banner to display the assignments
  * @param  {Object} arr LearnerSubmissions Array
- * @param  {Object} obj AssignmentGroup
- * @return {Number}
+ * @param  {Object} obj AssignmentGroup Object
+ * @return {Number} Numbers, dates, strings
  */
 function displayAssignments(arr) {
   let output = "";
@@ -304,9 +304,9 @@ function displayAssignments(arr) {
 
 /**
  * Display all course information
- * @param  {Object}       Student Output
- * @param  {}
- * @return {Object}      An array
+ * @param  {Object}       CourseInfo, AssignmentGroup
+ * @param  {Array}        LearnerSubmission
+ * @return {Array}        StudentOutput
  */
 function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) {
   try {

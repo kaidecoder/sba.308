@@ -130,8 +130,7 @@ function getLearnerID() {
   });
   return ([student_id_1, student_id_2] = idArray);
 }
-console.log(getLearnerID());
-console.log(student_id_1, student_id_2);
+getLearnerID();
 
 /**
  * Pluck student assignment scores from an array
@@ -183,28 +182,32 @@ function getPointsPossible() {
  * @param  {}
  * @return {Number}      The average of numbers, individual student scores
  */
-let learner1_1, learner1_2, learner2_1, learner2_2;
+let learner1_1, learner1_2, learner2_1, learner2_2, points1, points2;
 function findAverage() {
   try {
-    let [score1, score2] = learner1_scores;
-    let [score4, score5] = learner2_scores;
-    let [points1, points2] = points;
-    let avg1, avg2;
-    learner1_1 = score1 / points1;
-    learner1_2 = score2 / points2;
-    avg1 = score1 / points1;
-    learner2_1 = score4 / points1;
-    learner2_2 = (0.9 * score5) / points2;
-    avg2 = (0.9 * score5) / points2;
+    if (points1 !== 0 || points2 !== 0) {
+      let [score1, score2] = learner1_scores;
+      let [score4, score5] = learner2_scores;
+      [points1, points2] = points;
+      let avg1, avg2;
+      learner1_1 = score1 / points1;
+      learner1_2 = score2 / points2;
+      avg1 = score1 / points1;
+      learner2_1 = score4 / points1;
+      learner2_2 = (score5 - 0.1 * points2) / points2;
+      avg2 = (score5 - 0.1 * points2) / points2;
 
-    return {
-      learner1_1,
-      learner1_2,
-      learner2_1,
-      learner2_2,
-      avg1,
-      avg2,
-    };
+      return {
+        learner1_1,
+        learner1_2,
+        learner2_1,
+        learner2_2,
+        avg1,
+        avg2,
+      };
+    } else {
+      throw "Error - Can't divide by zero";
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -216,13 +219,14 @@ function findAverage() {
  * @param  {}
  * @return {}
  */
-function getNames(x, y) {
+function getNames(name1, name2) {
   console.log(
     `
       ***************************************************
-      * Course Name: ${x["name"]}         *
-      * Course Id: ${x["id"]}                                  *
-      * Current Assignment: ${y["name"]}  *
+      * Course Name: ${name1["name"]}         *
+      * Course Id: ${name1["id"]}                                  *
+      * Current Assignment: ${name2["name"]}  *
+      * Preparer: Deb Prentice                          *
       * *************************************************
       `,
   );
@@ -234,7 +238,7 @@ function getNames(x, y) {
  * @param  {Object} obj AssignmentGroup
  * @return {Number}
  */
-function displayAssignments(arr, obj) {
+function displayAssignments(arr) {
   let output = "";
   let due = "";
 
@@ -308,7 +312,7 @@ function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) {
   try {
     if (isCorrectCourse()) {
       getNames(CourseInfo, AssignmentGroup);
-      displayAssignments([LearnerSubmission], AssignmentGroup);
+      displayAssignments([LearnerSubmission]);
       const { learner1_1, learner1_2, learner2_1, learner2_2, avg1, avg2 } =
         findAverage();
 
@@ -320,9 +324,9 @@ function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) {
           avg: avg1,
         };
         studentOutput[1] = {
-          2: learner2_2,
+          2: Number(learner2_2.toFixed(2)),
           id: student_id_2,
-          avg: avg2,
+          avg: Number(avg2.toFixed(2)),
         };
 
         return studentOutput;
@@ -336,7 +340,6 @@ function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) {
 }
 console.log(getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmissions]));
 
-
 /*
 - What could you have done differently during the planning stages of your project to make the execution easier?
 
@@ -345,12 +348,12 @@ Answer: I tried to pseudo-code right from the start, but had a hard time visuali
 
 - Were there any requirements that were difficult to implement? - What do you think would make them easier to implement in future projects?
 
-Answer:  Working with objects was quite hard for me.  I kept looking for a set method to implement after using the for..in, but it still eludes me.  I think I could have done a better job finding the average if I had started by checking which assignments were included and which weren't.  I basically set my averages in stone, then realized the work it would take to redo a few of my functions to satisfy the new version of the average function.
+Answer:  Working with objects was quite hard for me.  I kept looking for a set method to implement after using the for..in, but it still eludes me.  I think I could have done a better job by working on the average function first, before implementing the minor functions that supported the average function.  Because I worked backward, then I was left to fit the smaller functions into my main average function, instead of the other way around.
 
 
 - What would you add to, or change about your application if given more time?
 
-Answer:  I would begin all of my functions with some kind of check, just so I would have room to cover any edge cases.  I would not hard-code anything, but would allow the functions to flow and intermingle.  I would also develop my functions more and allow some of them to be dependent on others.
+Answer:  I would begin all of my functions with some kind of check, just so I would have room to cover any edge cases.  I would not hard-code anything, but would allow the functions to flow and intermingle.  I would also develop my main functions first,  and allow some of the functions to be dependent on others.
 
 - Use this space to make notes for your future self about anything that you think is important to remember about this process, or that may aid you when attempting something similar again:
 

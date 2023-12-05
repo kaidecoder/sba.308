@@ -1,11 +1,5 @@
 ### SBA 308: JavaScript Fundamentals
 
-### Introduction
-
-This assessment gauges your understanding of fundamental JavaScript concepts and your ability to apply these concepts in a practical manner. While you are encouraged to be creative with your projects and implementations, keep in mind the specific topics that you are required to demonstrate understanding of, and make sure your project incorporates them appropriately.
-This assessment has a total duration of two (2) days. This is a take-home assessment.
-You have two total days (including weekends and holidays) to work on this assessment. This assessment will be due at 5:00pm on the second day after it is assigned. Your instructor may provide you with class time to work on the assessment, schedule permitting.
-
 ### Objectives
 
 - Employ basic JavaScript syntax accurately.
@@ -112,3 +106,11 @@ Create your application locally, and initialize a local git repo. Make frequent 
 - Were there any requirements that were difficult to implement? - What do you think would make them easier to implement in future projects?
 - What would you add to, or change about your application if given more time?
 - Use this space to make notes for your future self about anything that you think is important to remember about this process, or that may aid you when attempting something similar again:
+
+### THE PLAN
+
+![Brainstorm image](./images/SBA.308.drawio.png)
+
+### THE OUTPUT
+
+![Assignment Image](./images/Screenshot%202023-12-04%20at%209.01.03%E2%80%AFPM.png)

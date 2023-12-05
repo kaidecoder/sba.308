@@ -117,7 +117,7 @@ function isCorrectCourse() {
  * Pluck learner IDs from LearnerSubmissions array
  * @param  {}
  * @param  {}
- * @return {Number}      Two student IDs
+ * @return {Array}      Two student IDs
  */
 function getLearnerID() {
   let idArray = [];

@@ -180,7 +180,7 @@ function getPointsPossible() {
  * Find the average of individual student assignments and weighted assignments
  * @param  {}
  * @param  {}
- * @return {Number}      The average of all assignments per student, individual assignment average
+ * @return {Object}      The average of all assignments per student, individual assignment average
  */
 let learner1_1, learner1_2, learner2_1, learner2_2, points1, points2;
 function findAverage() {

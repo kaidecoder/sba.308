@@ -156,7 +156,7 @@ function studentScores() {
 studentScores();
 
 /**
- * Pluck the possible points amount from an object
+ * Pluck the possible points amount from the AssignmentGroup object
  * @param  {}
  * @param  {}
  * @return {Number}      The possible points
@@ -340,22 +340,4 @@ function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) {
 }
 console.log(getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmissions]));
 
-/*
-- What could you have done differently during the planning stages of your project to make the execution easier?
 
-Answer: I tried to pseudo-code right from the start, but had a hard time visualizing what to do.  So I made a flow-chart, and looked for connections, and from there I was able to write the pseudocode.
-
-
-- Were there any requirements that were difficult to implement? - What do you think would make them easier to implement in future projects?
-
-Answer:  Working with objects was quite hard for me.  I kept looking for a set method to implement after using the for..in, but it still eludes me.  I think I could have done a better job by working on the average function first, before implementing the minor functions that supported the average function.  Because I worked backward, then I was left to fit the smaller functions into my main average function, instead of the other way around.
-
-
-- What would you add to, or change about your application if given more time?
-
-Answer:  I would begin all of my functions with some kind of check, just so I would have room to cover any edge cases.  I would not hard-code anything, but would allow the functions to flow and intermingle.  I would also develop my main functions first,  and allow some of the functions to be dependent on others.
-
-- Use this space to make notes for your future self about anything that you think is important to remember about this process, or that may aid you when attempting something similar again:
-
-Answer:  Dear self, you need to develop a strategy for reading data from outer objects and nested objects.  You need to do a better job at writing pseudo-code, and visualizing the entire problem before you begin.  Avoid the temptation to hard-code data, and allow your program to flow and provide all the calculations you need.  Don't be afraid to rewrite your program when you know something needs fixing, despite the amount of time it will take to fix the issue.  
-*/
